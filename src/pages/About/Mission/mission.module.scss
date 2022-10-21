@@ -1,0 +1,41 @@
+@import '../../../assets/style/mixin';
+
+.mission {
+    margin-bottom: 5rem;
+    &-container {
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        @include media-tablet {
+            flex-direction: column;
+        }
+
+        & > img {
+            max-width: 40rem;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.content {
+    max-width: 500px;
+
+    .heading {
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        margin-bottom: 2rem;
+        font-weight: 500;
+    }
+
+    .founder {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}

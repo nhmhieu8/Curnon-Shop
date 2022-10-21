@@ -1,0 +1,130 @@
+@import '../../../assets/style/mixin';
+@import '../../../assets/style/variable';
+
+.empty,
+.header {
+    height: 8rem;
+}
+
+.header {
+    // border-top: 1px solid transparent;
+    border-bottom: 2px solid #d3d3d3;
+    background-color: $main-background-color;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 70;
+}
+
+.header-container {
+    width: 95vw;
+    margin: 0 auto;
+    @include grid(3);
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @include media-mobile {
+        width: 100vw;
+        padding: 0 10px;
+    }
+
+    button {
+        color: $main-color;
+    }
+
+    .nav-container {
+        justify-self: start;
+        align-self: stretch;
+        display: flex;
+        align-items: stretch;
+
+        .toggle-btn {
+            font-size: 3rem;
+            z-index: 100;
+        }
+        .nav {
+            display: flex;
+            gap: 3rem;
+            z-index: 90;
+            transition: all 0.4s ease-in-out;
+            p {
+                color: $main-color;
+            }
+            &.hidden {
+                @include media-tablet {
+                    transform: translate(-100%, 0);
+                    opacity: 0;
+                }
+            }
+            @include media-tablet {
+                background-color: $main-background-color;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 4rem;
+                opacity: 1;
+            }
+            &__item {
+                display: flex;
+                align-items: center;
+                font-weight: 400;
+                &:hover,
+                &:active {
+                    border-bottom: 1px solid $main-color;
+                    margin-bottom: -1px;
+                }
+                p {
+                    @include media-tablet {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        justify-self: center;
+        &__img {
+            width: 8rem;
+        }
+    }
+    .cart-container {
+        justify-self: end;
+        @include center-flex-box;
+        gap: 1.6rem;
+        .cart,
+        .user {
+            font-size: 2.4rem;
+            font-weight: 100;
+        }
+        .cart {
+            position: relative;
+            &__quantity {
+                font-size: 1.4rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(70%, -70%);
+                background-color: $main-color;
+                color: $main-background-color;
+                border-radius: 50%;
+                width: 1.8rem;
+                height: 1.8rem;
+                @include center-flex-box;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $tablet-maxwidth) {
+    .toggle-btn {
+        display: none;
+    }
+}

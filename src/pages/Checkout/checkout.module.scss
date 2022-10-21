@@ -1,0 +1,12 @@
+@import '../../assets/style/mixin';
+
+.checkout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include media-tablet {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+    }
+}

@@ -1,0 +1,151 @@
+@import '../../../assets/style/variable';
+@import '../../../assets/style/mixin';
+
+footer {
+    background-color: $second-background-color;
+    padding: 5rem 0 2rem;
+
+    .footer-wrapper {
+        max-width: 120rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+
+        @include media-tablet {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    h4 {
+        margin-bottom: 2.5rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    form {
+        max-width: 50rem;
+        width: 100%;
+
+        @include media-tablet {
+            max-width: unset;
+        }
+
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            @include media-tablet {
+                width: 100%;
+            }
+
+            .input-wrapper {
+                margin-bottom: 1.7rem;
+                position: relative;
+
+                .error-message {
+                    position: absolute;
+                    top: 0;
+                    left: 0.5rem;
+                    transform: translateY(-100%);
+                    color: red;
+                    padding-bottom: 0.2rem;
+                }
+            }
+
+            input,
+            select,
+            option {
+                width: 100%;
+                height: 100%;
+                padding: 1rem 2rem;
+                font-size: 1.4rem;
+                border: 1px solid $gray-color;
+                color: $gray-color;
+                font-family: 'Montserrat', sans-serif;
+
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+
+            select {
+                grid-column: 1/2;
+            }
+
+            .input-wrapper:has(select) {
+                padding-right: 1.5rem;
+            }
+
+            .input-wrapper:has(input[name='name']) {
+                grid-column: 2/-1;
+            }
+
+            .input-wrapper:has(input[name='email']) {
+                grid-column: 1/-1;
+            }
+
+            button {
+                grid-column: 1/-1;
+                background-color: $gray-color;
+                color: $main-background-color;
+                padding: 1.2rem 2rem;
+
+                &:hover {
+                    color: $second-background-color;
+                }
+            }
+        }
+    }
+
+    .contact {
+        p + p {
+            margin-top: 1rem;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.2rem;
+            margin-top: 1rem;
+
+            button {
+                font-size: 3rem;
+            }
+        }
+
+        .icon-pay {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 6rem;
+
+            @include media-mobile {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            img {
+                max-width: 5rem;
+            }
+        }
+    }
+
+    .address {
+        &__item {
+            margin-bottom: 3.5rem;
+
+            p + p {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}

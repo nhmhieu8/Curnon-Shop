@@ -1,0 +1,108 @@
+@import '../../../assets/style/variable';
+@import '../../../assets/style/mixin';
+
+.customer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    background-color: $main-background-color;
+
+    @include media-mobile {
+        padding: 4rem 2rem;
+        height: auto !important;
+    }
+
+    img {
+        width: 7rem;
+        margin-bottom: 3rem;
+    }
+
+    h4 {
+        margin-bottom: 4rem;
+    }
+
+    form {
+        align-self: stretch;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: stretch;
+
+        @include media-mobile {
+            grid-template-columns: 1fr;
+        }
+
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+
+            input {
+                width: 100%;
+                height: 100%;
+                padding: 1rem 2rem;
+                font-size: 1.4rem;
+                border: 1px solid $gray-color;
+                color: $gray-color;
+                font-family: 'Montserrat', sans-serif;
+
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+
+            .error-message {
+                position: absolute;
+                top: 0;
+                left: 1.2rem;
+                transform: translateY(-100%);
+                color: red;
+                padding-bottom: 0.2rem;
+            }
+        }
+
+        .input-wrapper:has(input[name='email'], input[name='address'], textarea) {
+            grid-column: 1/-1;
+        }
+
+        textarea {
+            resize: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            border: 1px solid $gray-color;
+            padding: 1rem 2rem;
+            width: 100% !important;
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+
+        .form-note {
+            grid-column: 1/-1;
+            text-align: center;
+            font-weight: 500;
+
+            span {
+                color: $green-color;
+                font-weight: 600;
+            }
+        }
+
+        button {
+            background-color: $green-color;
+            color: $main-background-color;
+            grid-column: 1/-1;
+            width: 60%;
+            justify-self: center;
+            padding: 1rem 3rem;
+            margin-top: 3rem;
+            font-weight: 600;
+
+            @include media-mobile {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import '../../../assets/style/mixin';
+
+.definition {
+    &-container {
+        transform: translateY(-50%);
+        background-color: #fff;
+        max-width: 70rem;
+        // width: 100%;
+        padding: 6rem 4rem 0;
+        margin: 0 auto;
+        text-align: center;
+
+        @include media-mobile {
+            padding: 4rem 2rem 2rem;
+        }
+
+        .title {
+            margin-bottom: 1rem;
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+        .subtitle {
+            font-weight: 400;
+            margin-bottom: 2.4rem;
+        }
+        .description {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}

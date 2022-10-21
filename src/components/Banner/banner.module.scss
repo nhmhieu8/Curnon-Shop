@@ -1,0 +1,20 @@
+@import "../../assets/style/mixin";
+.banner {
+  width: 100%;
+  img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &-destop {
+    @include media-tablet {
+      display: none;
+    }
+  }
+  &-tablet {
+    display: none;
+    @include media-tablet {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../assets/style/mixin';
+
+.products {
+    background-color: $main-background-color;
+
+    &__banner {
+        padding: 3rem;
+        @include media-tablet {
+            padding: 0;
+        }
+    }
+
+    &__wrapper {
+        padding: 3rem;
+        min-height: 60rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 4rem;
+
+        @include media-tablet {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        @include media-mobile {
+            padding: 3rem 2rem;
+        }
+    }
+}

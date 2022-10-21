@@ -1,0 +1,72 @@
+@import '../../assets/style/mixin';
+@import '../../assets/style/variable';
+
+.product-container {
+    max-width: 23rem;
+    transition: all 0.4s ease;
+    position: relative;
+    &:hover {
+        box-shadow: $box-shadow;
+        .add-to-cart {
+            display: block;
+        }
+    }
+    @include media-tablet {
+        max-width: 35rem;
+    }
+}
+.product-img {
+    width: 100%;
+}
+
+.product-detail {
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+    padding: 1rem 0;
+    color: $main-color;
+    &__style {
+        font-weight: 200;
+        margin-bottom: 0.8rem;
+    }
+    &__name {
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+    }
+    &__price {
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 1rem 0;
+    border: 1px solid #fff;
+    background-color: $second-background-color;
+    color: $main-color;
+    text-transform: uppercase;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-100%);
+    transition: all 0.4s ease;
+    display: none;
+
+    @include media-tablet {
+        display: block;
+        position: static;
+        transform: translateY(0);
+        background-color: $main-color;
+        color: $main-background-color;
+    }
+
+    h5 {
+        font-weight: 600;
+    }
+
+    &:hover {
+        background-color: $main-color;
+        color: $second-background-color;
+    }
+}

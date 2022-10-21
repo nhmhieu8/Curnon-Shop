@@ -1,0 +1,29 @@
+@import '../../../assets/style/mixin';
+
+.productsList {
+    flex-grow: 2; //display flex from product__wrapper
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    column-gap: 2rem;
+    row-gap: 3rem;
+
+    @include media-laptop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include media-tablet {
+        grid-template-columns: repeat(2, 1fr);
+        align-self: stretch;
+    }
+    @include media-mobile {
+        grid-template-columns: 1fr;
+    }
+
+    &.not-found {
+        min-height: 40rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

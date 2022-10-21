@@ -1,0 +1,27 @@
+{
+    "short_name": "Curnon Shop",
+    "name": "Curnon Shop",
+    "icons": [
+        {
+            "src": "/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "theme_color": "#fff",
+    "background_color": "#fff"
+}

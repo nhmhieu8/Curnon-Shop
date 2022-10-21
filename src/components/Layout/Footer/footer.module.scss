@@ -1,0 +1,83 @@
+@import '../../../assets/style/mixin';
+@import '../../../assets/style/variable';
+
+.footer {
+    background-color: $second-background-color;
+    color: $main-color;
+    padding: 1rem 0;
+}
+
+.footer-container {
+    width: 90%;
+    padding: 2rem 0 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4rem;
+
+    @include media-tablet {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+    }
+
+    @include media-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .stores {
+        @include media-tablet {
+            grid-column: 1/-1;
+        }
+    }
+
+    .store {
+        margin-bottom: 3rem;
+    }
+
+    .footer-item {
+        @include media-mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail {
+            font-size: 1.4rem;
+        }
+
+        .detail + .detail {
+            margin-top: 1rem;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 2rem;
+
+            @include media-mobile {
+                width: fit-content;
+                margin: 0 auto;
+            }
+
+            &__btn {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.author {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 2rem;
+}

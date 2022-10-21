@@ -1,0 +1,33 @@
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+
+$destop-maxwidth: 1200px;
+$laptop-maxwidth: 1024px;
+$tablet-maxwidth: 868px;
+$mobile-maxwidth: 480px;
+
+$main-background-color: #f8f7f4;
+$second-background-color: rgb(236, 235, 234);
+$third-background-color: #f0f0f0;
+$linear-background-color-1: linear-gradient(
+    rgba(128, 128, 128, 0.15) 0%,
+    rgba(22, 26, 33, 0) 100%
+);
+
+$linear-background-color-2: linear-gradient(
+    rgb(249, 249, 249) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+);
+
+$main-color: #161a21;
+$second-color: #161a2199;
+$third-color: #000;
+
+$gray-color: #9f9f9f;
+$green-color: #53c66e;
+$light-green-color: #b6e3be;
+$red-color: #d30b0b;
+
+$box-shadow: 2px 2px 20px #9b9a9a4d;
